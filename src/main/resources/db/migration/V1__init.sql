@@ -833,7 +833,7 @@ insert into QUEST_DROP
 
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 7 and area = 4 and difficulty ='NORMAL'),
-      equipment_id = (select id from equipment where code = 104011),
+      equipment_id = (select id from equipment where code = 114011),
       display_order=1;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 7 and area = 4 and difficulty ='NORMAL'),
@@ -1707,27 +1707,27 @@ insert into QUEST_DROP
       display_order=2;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 10 and area = 2 and difficulty ='NORMAL'),
-      equipment_id = (select id from equipment where code = 124431),
+      equipment_id = (select id from equipment where code = 114102),
       display_order=3;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 10 and area = 2 and difficulty ='NORMAL'),
-      equipment_id = (select id from equipment where code = 113552),
+      equipment_id = (select id from equipment where code = 123582),
       display_order=4;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 10 and area = 2 and difficulty ='NORMAL'),
-      equipment_id = (select id from equipment where code = 123282),
+      equipment_id = (select id from equipment where code = 113342),
       display_order=5;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 10 and area = 2 and difficulty ='NORMAL'),
-      equipment_id = (select id from equipment where code = 123432),
+      equipment_id = (select id from equipment where code = 113101),
       display_order=6;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 10 and area = 2 and difficulty ='NORMAL'),
-      equipment_id = (select id from equipment where code = 113012),
+      equipment_id = (select id from equipment where code = 113162),
       display_order=7;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 10 and area = 2 and difficulty ='NORMAL'),
-      equipment_id = (select id from equipment where code = 123192),
+      equipment_id = (select id from equipment where code = 123041),
       display_order=8;
 
 insert into QUEST_DROP
@@ -4975,7 +4975,7 @@ insert into QUEST_DROP
       display_order=1;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 3 and area = 3 and difficulty ='HARD'),
-      equipment_id = (select id from equipment where code = 113013),
+      equipment_id = (select id from equipment where code = 103191),
       display_order=2;
 insert into QUEST_DROP
   set quest_id = (select id from quest where chapter = 3 and area = 3 and difficulty ='HARD'),

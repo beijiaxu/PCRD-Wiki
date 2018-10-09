@@ -1,8 +1,9 @@
 <template>
   <div>
     <el-tabs
+      class="default-align-center"
       tab-position="left"
-      style="width: 600px; height: 650px"
+      style="width: 750px;"
       @tab-click="handleClick">
       <el-tab-pane
         v-for="(item) in quests"
@@ -10,26 +11,16 @@
         :label="item.chapter + '.' + item.name"
         :name="item.name"
       >
-        <el-table
-          :data="chapterDrops"
-          style="width: 100%">
-          <el-table-column
-            prop="area"
-            label="地区"
-            width="70"/>
-          <el-table-column
-            prop="drops"
-            label="掉落"
-            width="500"/>
-        </el-table>
+        <drop-table :drop-data="chapterDrops" />
       </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
+import DropTable from '../assets/dropTable.vue'
 export default {
+  components: { DropTable },
   data() {
     return {
       quests: [],
@@ -39,7 +30,6 @@ export default {
   beforeMount: function() {
     this.$axios.get('/api/quest').then(res => {
       let data = res.data
-      let addedChapters = []
       for (let i = 0; i < data.length; i++) {
         let added = false
         //already added chapter
@@ -64,27 +54,21 @@ export default {
         this.quests.push(chapter)
       }
     })
+    this.$notify.info({
+      title: '消息',
+      message: '点击地图章节查看掉落'
+    })
   },
   methods: {
     handleClick(tab) {
-      let drops = []
-      this.quests.some(quest => {
+      this.chapterDrops = []
+      this.quests.forEach(quest => {
         if (quest.index === parseInt(tab.index)) {
-          let currentChapter = this.quests[quest.index]
-          let areas = currentChapter.areas
-          areas.forEach(area => {
-            drops.push({
-              area:
-                area.difficulty === 'HARD'
-                  ? 'H ' + currentChapter.chapter + '-' + area.area
-                  : currentChapter.chapter + '-' + area.area,
-              drops: []
-            })
+          this.$axios.get(`/api/quest/chapter/${quest.chapter}`).then(res => {
+            this.chapterDrops = this.chapterDrops.concat(res.data)
           })
-          return true
         }
       })
-      this.chapterDrops = drops
     }
   }
 }

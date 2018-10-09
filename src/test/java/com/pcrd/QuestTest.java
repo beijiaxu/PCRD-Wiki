@@ -60,7 +60,7 @@ public class QuestTest {
         questDrop3.setEquipment(equipment);
         questDropRepository.save(questDrop3);
 
-        Iterable<QuestDrop> quests = questController.findQuests(1);
+        Iterable<QuestDrop> quests = questController.findQuestDropsByChapter(1);
         Assert.assertEquals(2, Iterables.size(quests));
     }
 }

@@ -27,7 +27,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    'assets/default.css'
   ],
 
   /*
@@ -50,7 +51,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    browserBaseURL: process.env.NODE_ENV === 'production' ? 'http://localhost:8080' : 'http://localhost:3000',
+    // browserBaseURL: process.env.NODE_ENV === 'production' ? 'http://localhost:8080' : 'http://localhost:3000',
     proxy: process.env.NODE_ENV !== 'production'
     // proxy: true
   },
@@ -79,5 +80,8 @@ module.exports = {
         })
       }
     }
+  },
+  generate: {
+    dir: '../src/main/resources/'
   }
 }

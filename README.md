@@ -5,8 +5,9 @@
     Arena search and resolver  (developing)
     
 ## How to develop
-    env: jdk 1.8, node.js > 5.0
+    env: jdk 1.8, node.js > 5.0, yarn
     import maven dependencies
+    mvn clean compile
     start PcrdApplication.java
     cd pcrd-ui
     yarn

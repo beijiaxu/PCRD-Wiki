@@ -1,0 +1,13 @@
+div.default-align-center {
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.default-img-icon {
+  width: 50px;
+}
+.default-img-icon-large {
+  width: 70px;
+}
